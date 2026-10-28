@@ -1,0 +1,62 @@
+workloads:
+  benign:
+    scale: 0.1
+    rng_seed: 101
+    volumes:
+      warehouses: 4
+      customers: 2000
+      categories: 100
+      category_depth: 3
+      products: 5000
+      sku_scheme: "random 3-letter prefix + number"
+      stock_levels: 20000
+      orders_history: 20000
+      blocklist_entries: 1000
+      search_terms: 50
+      tax_rules: 20
+      discounts_per_bundle: 8
+      import_rows: 10000
+      shipment_events: 50000
+      bins_per_warehouse: 500
+      route_stops: 50
+  typical:
+    scale: 0.5
+    rng_seed: 202
+    volumes:
+      warehouses: 4
+      customers: 30000
+      categories: 500
+      category_depth: 5
+      products: 20000
+      sku_scheme: "random 3-letter prefix + number"
+      stock_levels: 80000
+      orders_history: 300000
+      blocklist_entries: 20000
+      search_terms: 500
+      tax_rules: 200
+      discounts_per_bundle: 10
+      import_rows: 200000
+      shipment_events: 500000
+      bins_per_warehouse: 2000
+      route_stops: 300
+  hostile:
+    scale: 1.0
+    rng_seed: 303
+    volumes:
+      warehouses: 1
+      customers: 200000
+      categories: 5000
+      category_depth: 40
+      max_siblings_per_node: 800
+      products: 50000
+      sku_scheme: "one shared prefix (ACM-000001)"
+      stock_levels: 50000
+      orders_history: 1000000
+      blocklist_entries: 100000
+      search_terms: 5000
+      tax_rules: 2000
+      discounts_per_bundle: 18
+      import_rows: 2000000
+      shipment_events: 5000000
+      bins_per_warehouse: 5000
+      route_stops: 1500

@@ -1,0 +1,9 @@
+pyproject.toml
+src/main.py
+src/parcelpilot.py
+src/settings.py
+src/parcelpilot.egg-info/PKG-INFO
+src/parcelpilot.egg-info/SOURCES.txt
+src/parcelpilot.egg-info/dependency_links.txt
+src/parcelpilot.egg-info/requires.txt
+src/parcelpilot.egg-info/top_level.txt

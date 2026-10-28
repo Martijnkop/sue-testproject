@@ -1,0 +1,18 @@
+{
+  "subtotal_cents": 3100,
+  "best_combination": [
+    {
+      "discount_id": 1,
+      "code": "AUTUMN10",
+      "savings_cents": 310
+    },
+    {
+      "discount_id": 3,
+      "code": "SAVE5",
+      "savings_cents": 500
+    }
+  ],
+  "total_savings_cents": 810,
+  "final_total_cents": 2290,
+  "combinations_evaluated": 256
+}

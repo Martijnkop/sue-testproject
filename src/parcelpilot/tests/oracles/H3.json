@@ -1,0 +1,24 @@
+{
+  "customer_id": 118,
+  "status": "confirmed",
+  "source": "api",
+  "currency": "EUR",
+  "items": [
+    {
+      "product_id": 40,
+      "sku": "TEST-1",
+      "quantity": 1,
+      "unit_price_cents": 1000,
+      "discount_cents": 100,
+      "tax_cents": 171,
+      "line_total_cents": 1071
+    }
+  ],
+  "subtotal_cents": 1000,
+  "discount_cents": 100,
+  "tax_cents": 171,
+  "shipping_cents": 495,
+  "total_cents": 1566,
+  "fraud_decision": "allow",
+  "fraud_score": 0.0
+}

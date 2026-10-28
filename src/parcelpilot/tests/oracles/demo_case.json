@@ -1,0 +1,6 @@
+{
+  "expected": [1, 2, 3],
+  "amount": 12.345,
+  "tags": ["alpha", "beta", "gamma"],
+  "note": "toy oracle fixture"
+}

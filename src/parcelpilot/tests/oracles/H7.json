@@ -1,0 +1,12 @@
+{
+  "validity_window": [
+    {
+      "discount_cents": 200,
+      "total_cents": 1800
+    },
+    {
+      "discount_cents": 0,
+      "total_cents": 2000
+    }
+  ]
+}

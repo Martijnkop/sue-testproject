@@ -1,0 +1,10 @@
+{
+  "issue_id": "demo_case",
+  "median_ms": 12.5,
+  "samples_ms": [11.9, 12.4, 13.1, 12.3],
+  "threshold": 20.0,
+  "metadata": {
+    "source": "toy benchmark fixture",
+    "status": "baseline"
+  }
+}

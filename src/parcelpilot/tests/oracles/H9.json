@@ -1,0 +1,17 @@
+{
+  "total_tax_cents": 8,
+  "lines": [
+    {
+      "index": 0,
+      "tax_cents": 3,
+      "rate_bps": 5000,
+      "rule_id": 4
+    },
+    {
+      "index": 1,
+      "tax_cents": 5,
+      "rate_bps": 5000,
+      "rule_id": 4
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=75.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "parcelpilot"
+version = "0.1.0"
+description = "ParcelPilot marketplace service scaffold"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "fastapi==0.115.0",
+  "uvicorn==0.30.6",
+  "pydantic==2.9.2",
+  "pydantic-settings==2.4.0",
+  "sqlalchemy==2.0.35",
+  "psycopg[binary]==3.2.1",
+  "alembic==1.13.3",
+  "bcrypt==4.1.2",
+  "PyJWT==2.9.0",
+  "numpy==2.1.1",
+  "pandas==2.2.3",
+  "python-multipart==0.0.9",
+  "PyYAML==6.0.2",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest==8.3.3",
+  "pytest-asyncio==0.23.8",
+  "pytest-benchmark==4.0.0",
+  "httpx==0.27.2",
+  "locust==2.31.0",
+  "py-spy==0.4.2",
+  "ruff==0.6.8",
+  "faker==30.8.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["src"]
+markers = [
+  "oracle: records and checks golden outputs against fixed inputs",
+  "bench: benchmark smoke tests for performance baselines",
+  "tripwire: tests that fail if the known inefficiency is removed",
+  "e2e: end-to-end app tests",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+py-modules = ["main", "parcelpilot", "settings"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]

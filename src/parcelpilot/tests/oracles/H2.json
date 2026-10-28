@@ -1,0 +1,139 @@
+{
+  "entries": [
+    {
+      "id": 1,
+      "tenant_id": 1,
+      "entry_type": "email",
+      "value": "mia@example.com",
+      "reason": "chargeback ring",
+      "expires_at": null
+    },
+    {
+      "id": 2,
+      "tenant_id": 1,
+      "entry_type": "ip",
+      "value": "203.0.113.9",
+      "reason": "proxy traffic",
+      "expires_at": null
+    },
+    {
+      "id": 3,
+      "tenant_id": 1,
+      "entry_type": "phone",
+      "value": "49123456789",
+      "reason": "repeated chargebacks",
+      "expires_at": null
+    },
+    {
+      "id": 4,
+      "tenant_id": 1,
+      "entry_type": "address",
+      "value": "12 karl-heine-str leipzig",
+      "reason": "known return fraud",
+      "expires_at": null
+    },
+    {
+      "id": 5,
+      "tenant_id": 1,
+      "entry_type": "email",
+      "value": "expired@example.com",
+      "reason": "expired entry",
+      "expires_at": "2000-01-01T00:00:00Z"
+    }
+  ],
+  "cases": [
+    {
+      "payload": {
+        "email": "MIA@EXAMPLE.COM"
+      },
+      "decision": "allow",
+      "score": 40,
+      "matches": [
+        {
+          "entry_id": 1,
+          "entry_type": "email",
+          "value": "mia@example.com",
+          "reason": "chargeback ring"
+        }
+      ]
+    },
+    {
+      "payload": {
+        "ip_address": "203.0.113.9",
+        "phone": "+49 123 456789"
+      },
+      "decision": "review",
+      "score": 50,
+      "matches": [
+        {
+          "entry_id": 2,
+          "entry_type": "ip",
+          "value": "203.0.113.9",
+          "reason": "proxy traffic"
+        },
+        {
+          "entry_id": 3,
+          "entry_type": "phone",
+          "value": "49123456789",
+          "reason": "repeated chargebacks"
+        }
+      ]
+    },
+    {
+      "payload": {
+        "email": "mia@example.com",
+        "ip_address": "203.0.113.9",
+        "phone": "+49 123 456789"
+      },
+      "decision": "block",
+      "score": 90,
+      "matches": [
+        {
+          "entry_id": 1,
+          "entry_type": "email",
+          "value": "mia@example.com",
+          "reason": "chargeback ring"
+        },
+        {
+          "entry_id": 2,
+          "entry_type": "ip",
+          "value": "203.0.113.9",
+          "reason": "proxy traffic"
+        },
+        {
+          "entry_id": 3,
+          "entry_type": "phone",
+          "value": "49123456789",
+          "reason": "repeated chargebacks"
+        }
+      ]
+    },
+    {
+      "payload": {
+        "shipping_address": {
+          "line1": "12 Karl-Heine-Str",
+          "city": "Leipzig"
+        },
+        "email": "expired@example.com"
+      },
+      "decision": "allow",
+      "score": 20,
+      "matches": [
+        {
+          "entry_id": 4,
+          "entry_type": "address",
+          "value": "12 karl-heine-str leipzig",
+          "reason": "known return fraud"
+        }
+      ]
+    },
+    {
+      "payload": {
+        "email": "unknown@example.com"
+      },
+      "decision": "allow",
+      "score": 0,
+      "matches": []
+    }
+  ]
+}

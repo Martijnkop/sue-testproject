@@ -1,0 +1,1 @@
+"""Fraud domain package."""

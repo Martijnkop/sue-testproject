@@ -1,0 +1,8 @@
+{
+  "orders_count": 1,
+  "items_count": 3,
+  "gross_cents": 2500,
+  "discount_cents": 100,
+  "tax_cents": 266,
+  "net_cents": 2134
+}
